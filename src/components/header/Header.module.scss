@@ -1,0 +1,148 @@
+@import "../../common/colors.scss";
+
+.wrapper {
+    position: relative;
+    z-index: 1009;
+    opacity: 1;
+    transform: none;
+    position: sticky;
+    top: 0;
+    transform: all .3s ease-out;
+    backdrop-filter: blur(10px);
+
+    
+
+    .container{
+        justify-content: space-between; 
+        font-weight: 500;
+        padding: 0 5rem;
+        @media (max-width: $md) {
+            padding: 0rem 2rem;
+        }
+
+        
+
+        .name{
+            font-size: 1.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            a{
+                text-decoration: none;
+                color: $primary;
+            }
+        }
+        .close-nav{
+            display: none;
+
+            @media (max-width:$sm), 
+            (max-width: $md) {
+                display: block;
+                background-color: transparent;
+                height: 100vh;
+                width: 50%;
+                min-width: 50%;
+                position: absolute;
+                top: 0;
+                left: -100vh;
+                z-index: 1000;
+            }
+        }
+
+        .menu{
+
+            @media (max-width:$sm), 
+            (max-width: $md){
+                background: var(--t-white); 
+                height: 100vh;
+                width: 50%;
+                min-width: 50%;
+                position: absolute;
+                top: 7.5rem;
+                right: -100vh;
+                font-weight: 500;
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                transition: all .3s ease;
+                align-items: center;
+                box-shadow:  0 4px 4px rgba(0,0,0, 0.5);
+                transition: all .3s ease-in-out;
+                z-index: 500;
+                 
+                >*{
+
+                    @media (max-width: $lg){
+                        font-size: 1.8rem;
+                    }
+
+                    font-size: 16px; 
+                    text-align: left;
+                }
+            }
+
+            text-transform: uppercase;
+            font-size: 1rem;
+            list-style: none; 
+            gap: 1.5rem;
+            cursor: pointer;
+
+            li:not(:last-child){
+                a{
+                    color: inherit; 
+                    text-decoration: none;
+                    
+                }
+                @media (max-width: $md){
+                    background-image: linear-gradient(120deg, transparent 0%,
+                    transparent 50%, white 50%);
+                    background-size: 230%;
+                    transition: all .5s ease-in-out;
+                    padding: 1rem;
+
+                    &:hover{
+                        background-position: 100%;
+                        transform: translateX(1rem);
+                    }
+                }
+                @media (max-width: $md){
+                    font-size: 16px;
+                }
+
+                &:hover {
+                    color: $secondary;
+                }
+            }
+            
+            .phone{
+                gap: 1.2rem;
+                flex-wrap: wrap;
+                color: green;
+                
+                
+                @media (max-width: $lg){
+                    color: green;
+                    border: 1px solid var(--t-white);
+                }
+
+                
+            }
+        }
+
+        .menuIcon{
+            cursor: pointer;
+            display: none;                      
+
+            @media (max-width: $md), 
+            (max-width: $sm) {
+                display: block;
+            }
+        }
+
+        .show{
+            right: 0;
+        }
+        .show2{
+            left: 0;
+        }
+    }    
+}

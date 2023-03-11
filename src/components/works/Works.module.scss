@@ -1,0 +1,70 @@
+@import "../../common/colors.scss";
+
+.wrapper{
+    .container{
+        flex-direction: column;
+        gap:2rem;
+        padding-bottom: 2rem;
+        @media (max-width: $md),
+        (max-width: $lg) {
+            padding: 2rem 3rem;
+        }
+
+        .experiences{
+            height: 100%;
+            flex-direction: column;
+            gap: 1.4rem;
+            position: relaitive;
+
+            .exps{
+                height: 100%;
+                justify-content: space-between;
+                line-height: 40px;
+                align-items: flex-start;
+                display: flex;
+                
+                >div{
+                    flex: 1;
+                }
+
+                .role{
+                    margin-left: 2rem;
+                }
+            }
+
+            .progressBar{
+                position: absolute;
+                height: 250px;
+                display: flex;
+                flex-direction: column;
+                gap: 1.4rem;
+                left: 45%;
+
+                .line{
+                    position: absolute;
+                    height: 100%;
+                    width: 2px;
+                    
+                    background-position: right;
+                    background-size: 2px 30px;
+                    background-repeat: repeat-y;
+                    left: 48%;
+                    z-index: 1;
+                    border-radius: 5px;
+                }
+                >div {
+                    flex:1;
+                    padding-top: .8rem;
+                    z-index: 99;
+
+                    .circle{
+                        border-radius: 50%;
+                        background-color: color;
+                        width: 5px;
+                        height: 5px;
+                    }
+                }
+            }
+        }        
+    }
+}
